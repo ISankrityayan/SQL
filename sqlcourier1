@@ -1,0 +1,77 @@
+INSERT INTO [dbo].[User] (UserID, Name, Email, Password, ContactNumber, Address) VALUES
+(1, 'John Doe', 'johndoe@example.com', 'pass123', '1234567890', 'Address 1'),
+(2, 'Jane Smith', 'janesmith@example.com', 'pass234', '1234567891', 'Address 2'),
+(3, 'Alice Johnson', 'alicej@example.com', 'pass345', '1234567892', 'Address 3'),
+(4, 'Bob Brown', 'bobb@example.com', 'pass456', '1234567893', 'Address 4'),
+(5, 'Charlie Davis', 'charlied@example.com', 'pass567', '1234567894', 'Address 5'),
+(6, 'Diana Evans', 'dianae@example.com', 'pass678', '1234567895', 'Address 6'),
+(7, 'Ethan Fox', 'ethanf@example.com', 'pass789', '1234567896', 'Address 7'),
+(8, 'Fiona Green', 'fionag@example.com', 'pass890', '1234567897', 'Address 8'),
+(9, 'George Hill', 'georgeh@example.com', 'pass901', '1234567898', 'Address 9'),
+(10, 'Hannah Iris', 'hannah@example.com', 'pass012', '1234567899', 'Address 10');
+
+
+INSERT INTO [dbo].[Courier] (CourierID, SenderName, SenderAddress, ReceiverName, ReceiverAddress, Weight, Status, TrackingNumber, DeliveryDate) VALUES
+(1, 'John Doe', '1234 Street, City', 'Alice Johnson', '5678 Avenue, City', 5.00, 'Delivered', 'TN0001', '2023-01-10'),
+(2, 'Jane Smith', '1235 Street, City', 'Bob Brown', '5679 Avenue, City', 2.50, 'In Transit', 'TN0002', '2023-01-11'),
+(3, 'Alice Johnson', '1236 Street, City', 'Charlie Davis', '5680 Avenue, City', 3.00, 'Delivered', 'TN0003', '2023-01-12'),
+(4, 'Bob Brown', '1237 Street, City', 'Diana Evans', '5681 Avenue, City', 4.00, 'In Transit', 'TN0004', '2023-01-13'),
+(5, 'Charlie Davis', '1238 Street, City', 'Ethan Fox', '5682 Avenue, City', 3.50, 'Processing', 'TN0005', '2023-01-14'),
+(6, 'Diana Evans', '1239 Street, City', 'Fiona Green', '5683 Avenue, City', 2.75, 'Delivered', 'TN0006', '2023-01-15'),
+(7, 'Ethan Fox', '1240 Street, City', 'George Hill', '5684 Avenue, City', 4.25, 'In Transit', 'TN0007', '2023-01-16'),
+(8, 'Fiona Green', '1241 Street, City', 'Hannah Iris', '5685 Avenue, City', 1.75, 'Processing', 'TN0008', '2023-01-17'),
+(9, 'George Hill', '1242 Street, City', 'John Doe', '5678 Avenue, City', 5.25, 'Delivered', 'TN0009', '2023-01-18'),
+(10, 'Hannah Iris', '1243 Street, City', 'Jane Smith', '5679 Avenue, City', 3.75, 'In Transit', 'TN0010', '2023-01-19');
+
+
+INSERT INTO [dbo].[CourierServices] (ServiceID, ServiceName, Cost) VALUES
+(1, 'Standard Delivery', 10.00),
+(2, 'Express Delivery', 20.00),
+(3, 'Overnight Delivery', 30.00),
+(4, 'International Delivery', 40.00),
+(5, 'Same Day Delivery', 50.00),
+(6, 'Custom Delivery', 60.00),
+(7, 'Weekend Delivery', 70.00),
+(8, 'Holiday Delivery', 80.00),
+(9, 'Bulk Delivery', 90.00),
+(10, 'Fragile Item Delivery', 100.00);
+
+
+INSERT INTO [dbo].[Employee] (EmployeeID, Name, Email, ContactNumber, Role, Salary) VALUES
+(1, 'Emily Jackson', 'emilyj@example.com', '1234567900', 'Manager', 50000.00),
+(2, 'Oliver Kean', 'oliverk@example.com', '1234567901', 'Accountant', 45000.00),
+(3, 'Sophia Lane', 'sophial@example.com', '1234567902', 'Courier', 30000.00),
+(4, 'Liam Moore', 'liamm@example.com', '1234567903', 'HR', 40000.00),
+(5, 'Isabella Norton', 'isabellan@example.com', '1234567904', 'Admin Assistant', 35000.00),
+(6, 'Noah Osborne', 'noaho@example.com', '1234567905', 'IT Support', 38000.00),
+(7, 'Ava Parker', 'avap@example.com', '1234567906', 'Sales Rep', 42000.00),
+(8, 'William Quinn', 'williamq@example.com', '1234567907', 'Warehouse Manager', 47000.00),
+(9, 'Mia Richardson', 'miar@example.com', '1234567908', 'Customer Service', 34000.00),
+(10, 'Jacob Taylor', 'jacobt@example.com', '1234567909', 'Driver', 32000.00);
+
+
+INSERT INTO [dbo].[Location] (LocationID, LocationName, Address) VALUES
+(1, 'Main Office', '123 Main St, City'),
+(2, 'North Branch', '456 North St, City'),
+(3, 'South Branch', '789 South St, City'),
+(4, 'East Branch', '012 East St, City'),
+(5, 'West Branch', '345 West St, City'),
+(6, 'Central Warehouse', '678 Central Ave, City'),
+(7, 'Downtown Office', '901 Downtown Rd, City'),
+(8, 'Airport Facility', '234 Airport Rd, City'),
+(9, 'Harbor Site', '567 Harbor Blvd, City'),
+(10, 'Interstate Depot', '890 Interstate Dr, City');
+
+
+INSERT INTO [dbo].[Payment] (PaymentID, CourierID, LocationID, Amount, PaymentDate) VALUES
+(1, 1, 1, 100.00, '2023-01-10'),
+(2, 2, 2, 200.00, '2023-01-11'),
+(3, 3, 3, 150.00, '2023-01-12'),
+(4, 4, 4, 250.00, '2023-01-13'),
+(5, 5, 5, 300.00, '2023-01-14'),
+(6, 6, 6, 350.00, '2023-01-15'),
+(7, 7, 7, 400.00, '2023-01-16'),
+(8, 8, 8, 450.00, '2023-01-17'),
+(9, 9, 9, 500.00, '2023-01-18'),
+(10, 10, 10, 550.00, '2023-01-19');
+

@@ -1,0 +1,21 @@
+--Find Couriers That Have a Weight Greater Than the Average Weight of All Couriers:
+SELECT *
+FROM [dbo].[Courier]
+WHERE Weight > (SELECT AVG(Weight) FROM [dbo].[Courier]);
+
+--Find the Names of All Employees Who Have a Salary Greater Than the Average Salary:
+SELECT Name
+FROM [dbo].[Employee]
+WHERE Salary > (SELECT AVG(Salary) FROM [dbo].[Employee]);
+
+--Find the Total Cost of All Courier Services Where the Cost is Less Than the Maximum:
+SELECT SUM(Cost) AS TotalCost
+FROM [dbo].[CourierServices]
+WHERE Cost < (SELECT MAX(Cost) FROM [dbo].[CourierServices]);
+
+--Find the Locations Where the Maximum Payment Amount Was Made:
+SELECT L.*
+FROM [dbo].[Location] L
+JOIN [dbo].[Payment] P ON L.LocationID = P.LocationID
+WHERE P.Amount = (SELECT MAX(Amount) FROM [dbo].[Payment]);
+

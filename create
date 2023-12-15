@@ -1,0 +1,44 @@
+CREATE DATABASE SISDB;
+--Student Table
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    email VARCHAR(100),
+    phone_number VARCHAR(15)
+);
+--Courses Table
+CREATE TABLE Courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    course_description TEXT,
+    teacher_id INT
+);
+
+--Enrollment table
+CREATE TABLE Enrollments (
+    enrollment_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    enrollment_date DATE,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
+--Teacher Table
+CREATE TABLE Teachers (
+    teacher_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    phone_number VARCHAR(15)
+);
+---Payment Table
+CREATE TABLE Payments (
+    payment_id INT PRIMARY KEY,
+    student_id INT,
+    amount DECIMAL(10, 2),
+    payment_date DATE,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
